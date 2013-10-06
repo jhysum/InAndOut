@@ -328,7 +328,7 @@ public class HomeScreen extends Activity implements LocationListener{
  	public void makeUseOfNewLocation(Location location){
  		Log.d(TAG,"This is the location: " + location.toString());
  		Integer d = difference(location, firstlocation);
- 		if (d > 1){
+ 		if (d > 3){
  	 		Toast t = Toast.makeText(this, "moved alot: " + String.valueOf(d), Toast.LENGTH_LONG);
  	 		t.show();
  	 		if (geoswitch == 0 || geoswitch == 2){
