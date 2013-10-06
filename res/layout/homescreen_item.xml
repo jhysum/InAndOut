@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="@dimen/thumbnail_diameter"
+        android:layout_height="@dimen/thumbnail_diameter"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/alec" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/LargeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8sp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/image_text_spacer"
+        android:layout_toRightOf="@id/thumbnail"
+        android:text="Alec Strong" />
+
+    <TextView
+        android:id="@+id/state"
+        style="@style/NormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/thumbnail"
+        android:layout_marginLeft="@dimen/image_text_spacer"
+        android:layout_toRightOf="@id/thumbnail"
+        android:text="At home /" />
+
+    <TextView
+        android:id="@+id/status"
+        style="@style/SmallText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/thumbnail"
+        android:layout_marginLeft="2dp"
+        android:layout_toRightOf="@id/state"
+        android:text="Free to do something!"
+        android:textColor="@color/brown" />
+
+    <ImageView
+        android:id="@+id/calendar"
+        android:layout_width="@dimen/cell_icon_diameter"
+        android:layout_height="@dimen/cell_icon_diameter"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_calendar_green" />
+
+    <ImageView
+        android:id="@+id/tasks"
+        android:layout_width="@dimen/cell_icon_diameter"
+        android:layout_height="@dimen/cell_icon_diameter"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/cell_icon_spacer"
+        android:layout_toLeftOf="@id/calendar"
+        android:src="@drawable/icon_tasks_green" />
+
+</RelativeLayout>

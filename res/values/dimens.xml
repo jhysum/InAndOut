@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Welcome Screen -->
+    <dimen name="welcome_screen_padding">50dp</dimen>
+    <dimen name="text_seperation">10dp</dimen>
+    
+    <!-- Home screen -->
+    <dimen name="image_text_spacer">15dp</dimen>
+    <dimen name="cell_icon_spacer">10dp</dimen>
+    <dimen name="homescreen_padding">30dp</dimen>
+    
+    <!-- Buttons -->
+    <dimen name="green_button_padding_horizontal">15dp</dimen>
+    <dimen name="green_button_padding_vertical">15dp</dimen>
+    
+    <!-- Text -->
+    <dimen name="small_text_size">15sp</dimen>
+    <dimen name="normal_text_size">20sp</dimen>
+    <dimen name="large_text_size">30sp</dimen>
+    
+    <!-- Images -->
+    <dimen name="thumbnail_diameter">60dp</dimen>
+    <dimen name="cell_icon_diameter">15dp</dimen>
+</resources>
