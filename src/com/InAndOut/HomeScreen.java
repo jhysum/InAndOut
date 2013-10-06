@@ -10,6 +10,9 @@ import com.parse.ParseUser;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiConfiguration;
@@ -21,15 +24,20 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
-public class HomeScreen extends Activity{
+public class HomeScreen extends Activity implements LocationListener{
   private ListView listView1;
   ParseUser currentUser;
   ParseObject house;
 	String TAG = this.getClass().getCanonicalName();
+	static Location firstlocation = null;
+	static Integer geoswitch = 0;
 	
 	SimpleCursorAdapter mAdapter;
+	
+	LocationManager locationManager;
 
 	
   public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +50,7 @@ public class HomeScreen extends Activity{
 	    	connectToHomeWifi(this, house);
 	    	Log.d(TAG, "wifi is not connected");
 	    } else {
+	    	geolocate();
 	    	Log.d(TAG, "wifi is already connected");
 	    }
 		} catch (ParseException e) {
@@ -52,6 +61,12 @@ public class HomeScreen extends Activity{
 		if (ishome()){
 			Log.d(TAG,"is going home");
 			setishome(true);
+	    locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+	    String locationProvider = LocationManager.NETWORK_PROVIDER;
+	    // Or, use GPS location data:
+	    // String locationProvider = LocationManager.GPS_PROVIDER;
+
+	    locationManager.requestLocationUpdates(locationProvider, 200, 0, this);
 		} else {
 			setishome(false);
   	}
@@ -75,7 +90,7 @@ public class HomeScreen extends Activity{
     
     MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, array); 
     listView1.setAdapter(adapter);
-
+    
   }
   
   public void connectToHomeWifi(Context context, ParseObject house){
@@ -296,4 +311,104 @@ public class HomeScreen extends Activity{
   	startActivity(i);
   	finish();
  	}
+ 	
+ 	
+ 	public void onDestroy(){
+ 		super.onDestroy();
+ 		locationManager.removeUpdates(this);
+ 	}
+ 	
+ 	public void geolocate(){
+ 		String locationProvider = LocationManager.NETWORK_PROVIDER;
+ // Or, use GPS location data:
+ // String locationProvider = LocationManager.GPS_PROVIDER;
+
+ 		locationManager.requestLocationUpdates(locationProvider, 0, 0, this);
+ 	}
+ 	public void makeUseOfNewLocation(Location location){
+ 		Log.d(TAG,"This is the location: " + location.toString());
+ 		Integer d = difference(location, firstlocation);
+ 		if (d > 1){
+ 	 		Toast t = Toast.makeText(this, "moved alot: " + String.valueOf(d), Toast.LENGTH_LONG);
+ 	 		t.show();
+ 	 		if (geoswitch == 0 || geoswitch == 2){
+	 	 		setishome(false);
+	 	 		
+		 	 	ParseQuery<ParseUser> alluser = ParseUser.getQuery();
+		    house = (ParseObject) currentUser.get("House");
+		    alluser.whereEqualTo("House", house);
+		    List<ParseUser> filteruser = null;
+				try {
+					filteruser = alluser.find();
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				listView1 = (ListView)findViewById(R.id.listView1);
+		       
+		    ParseUser[] array = filteruser.toArray(new ParseUser[filteruser.size()]);
+		    
+		    MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, array); 
+		    listView1.setAdapter(adapter);
+		    geoswitch = 1;
+ 	 		} 
+ 		} else { 
+ 			Toast t = Toast.makeText(this, "this is how much you've moved: " + String.valueOf(d), Toast.LENGTH_SHORT);
+ 	 		t.show();
+ 	 	if (geoswitch == 0 || geoswitch == 1){
+ 	 		setishome(true);
+ 	 		
+	 	 	ParseQuery<ParseUser> alluser = ParseUser.getQuery();
+	    house = (ParseObject) currentUser.get("House");
+	    alluser.whereEqualTo("House", house);
+	    List<ParseUser> filteruser = null;
+			try {
+				filteruser = alluser.find();
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			listView1 = (ListView)findViewById(R.id.listView1);
+	       
+	    ParseUser[] array = filteruser.toArray(new ParseUser[filteruser.size()]);
+	    
+	    MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, array); 
+	    listView1.setAdapter(adapter);
+	    geoswitch = 2;
+	 		} 
+ 		}
+ 	}
+
+ 	public Integer difference(Location newlocation, Location firstlocation){
+ 		Integer result = 0;
+ 		
+ 		result = (int) firstlocation.distanceTo(newlocation);
+ 		
+ 		return result;
+ 	}
+	@Override
+	public void onLocationChanged(Location location) {
+		if (firstlocation == null){
+			firstlocation = location;
+		}
+		 makeUseOfNewLocation(location);
+	}
+
+	@Override
+	public void onProviderDisabled(String arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+		// TODO Auto-generated method stub
+		
+	}
 }
