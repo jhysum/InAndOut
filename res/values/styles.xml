@@ -4,7 +4,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="Theme.Sherlock.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Black.NoTitleBar">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -16,30 +16,30 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    
+
     <style name="AppThemeNoActionBar">
-        
+
     </style>
-    
+
     <!-- Text Styles -->
     <style name="NormalText">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:textStyle">normal</item>
     </style>
-    
+
     <style name="SmallText">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/small_text_size</item>
         <item name="android:textStyle">normal</item>
     </style>
-    
+
     <style name="LargeText">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/large_text_size</item>
         <item name="android:textStyle">normal</item>
     </style>
-    
+
     <!-- Button Styles -->
     <style name="GreenButton">
         <item name="android:textColor">@color/black</item>

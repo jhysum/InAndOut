@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    android:orientation="vertical"
-    android:padding="@dimen/welcome_screen_padding" >
-    
-    <EditText 
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:hint="@string/username" />
-    
-    <EditText 
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="@string/password"
-        android:textColor="#FFFFFF"
-        android:layout_below="@id/username" />
-    
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg"
+                android:orientation="vertical"
+                android:padding="@dimen/welcome_screen_padding">
+
+    <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:hint="@string/username"/>
+
+    <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/username"/>
+
     <Button
-        android:id="@+id/loginButton"
-        style="@style/GreenButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/password"
-        android:onClick="onClickLogin"
-        android:text="@string/login"
-        android:textColor="@color/white" />
+            android:id="@+id/loginButton"
+            style="@style/GreenButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password"
+            android:onClick="onClickLogin"
+            android:text="@string/login"
+            android:textColor="@color/white"/>
 
     <TextView
-        android:id="@+id/loginOr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginButton"
-        android:text="@string/or" />
-    
-   	<Button
-        android:id="@+id/registerButton"
-        style="@style/GreenButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginOr"
-        android:onClick="onClickRegister"
-        android:text="@string/registerButton"
-        android:textColor="@color/white" />
-    
+            android:id="@+id/loginOr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginButton"
+            android:text="@string/or"/>
+
+    <Button
+            android:id="@+id/registerButton"
+            style="@style/GreenButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginOr"
+            android:onClick="onClickRegister"
+            android:text="@string/registerButton"
+            android:textColor="@color/white"/>
+
 </RelativeLayout>

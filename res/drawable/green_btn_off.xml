@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle" >
+       android:shape="rectangle">
 
-    <solid android:color="@color/Green" />
+    <solid android:color="@color/Green"/>
 
     <padding
-        android:bottom="@dimen/green_button_padding_vertical"
-        android:left="@dimen/green_button_padding_horizontal"
-        android:right="@dimen/green_button_padding_horizontal"
-        android:top="@dimen/green_button_padding_vertical" />
+            android:bottom="@dimen/green_button_padding_vertical"
+            android:left="@dimen/green_button_padding_horizontal"
+            android:right="@dimen/green_button_padding_horizontal"
+            android:top="@dimen/green_button_padding_vertical"/>
 
 </shape>
