@@ -15,8 +15,11 @@ public final class R {
         public static final int PressedGreen=0x7f040001;
         public static final int black=0x7f040002;
         public static final int brown=0x7f040004;
+        public static final int green=0x7f040006;
+        public static final int grey=0x7f040008;
         public static final int red=0x7f040005;
         public static final int white=0x7f040003;
+        public static final int yellow=0x7f040007;
     }
     public static final class dimen {
         /** 
@@ -73,35 +76,40 @@ public final class R {
         public static final int logo_green=0x7f020015;
         public static final int magbig=0x7f020016;
         public static final int mic=0x7f020017;
-        public static final int sylvia=0x7f020018;
-        public static final int vic=0x7f020019;
+        public static final int plus=0x7f020018;
+        public static final int sylvia=0x7f020019;
+        public static final int vic=0x7f02001a;
     }
     public static final class id {
-        public static final int action_leave_home=0x7f09001a;
-        public static final int action_logout=0x7f09001b;
-        public static final int action_settings=0x7f090019;
+        public static final int action_leave_home=0x7f09001e;
+        public static final int action_logout=0x7f09001f;
+        public static final int action_settings=0x7f09001d;
+        public static final int add=0x7f09000c;
         public static final int address=0x7f090001;
-        public static final int base=0x7f09000a;
-        public static final int broadcast_button=0x7f090008;
-        public static final int calendar=0x7f090011;
+        public static final int base=0x7f09000d;
+        public static final int broadcast_button=0x7f090009;
+        public static final int calendar=0x7f090015;
         public static final int create=0x7f090007;
         public static final int createButton=0x7f090005;
+        public static final int homedeckLayout=0x7f09000a;
         public static final int housename=0x7f090000;
+        public static final int indicator=0x7f090010;
         public static final int join=0x7f090006;
-        public static final int linearLayout=0x7f09000c;
-        public static final int listView1=0x7f090009;
-        public static final int listview=0x7f090013;
-        public static final int loginButton=0x7f090016;
-        public static final int loginOr=0x7f090017;
-        public static final int name=0x7f09000d;
-        public static final int password=0x7f090015;
-        public static final int registerButton=0x7f090018;
-        public static final int slash=0x7f09000f;
-        public static final int state=0x7f09000e;
-        public static final int status=0x7f090010;
-        public static final int tasks=0x7f090012;
-        public static final int thumbnail=0x7f09000b;
-        public static final int username=0x7f090014;
+        public static final int linearLayout=0x7f09000f;
+        public static final int listView1=0x7f09000b;
+        public static final int listview=0x7f090017;
+        public static final int loginButton=0x7f09001a;
+        public static final int loginOr=0x7f09001b;
+        public static final int name=0x7f090011;
+        public static final int password=0x7f090019;
+        public static final int registerButton=0x7f09001c;
+        public static final int slash=0x7f090013;
+        public static final int state=0x7f090012;
+        public static final int status=0x7f090014;
+        public static final int tasks=0x7f090016;
+        public static final int thumbnail=0x7f09000e;
+        public static final int topBar=0x7f090008;
+        public static final int username=0x7f090018;
         public static final int wifiname=0x7f090003;
         public static final int wifipassword=0x7f090004;
         public static final int wifitype=0x7f090002;

@@ -7,6 +7,8 @@
     <color name="white">#FFF</color>
     <color name="brown">#b26a21</color>
     <color name="red">#FF0000</color>
-
+    <color name="green">#12a976</color>
+    <color name="yellow">#ffc442</color>
+    <color name="grey">#bababa</color>
 
 </resources>
