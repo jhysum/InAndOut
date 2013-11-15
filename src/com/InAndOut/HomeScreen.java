@@ -58,7 +58,7 @@ public class HomeScreen extends Activity implements LocationListener {
                 Log.d(TAG, "wifi is already connected");
             }
         } catch (ParseException e) {
-
+        	//
         }
 
         if (ishome()) {

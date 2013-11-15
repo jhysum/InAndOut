@@ -1,36 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:background="#eeeeee"
-              android:padding="25dip">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical"
+    android:padding="25dip" >
 
     <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dip">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dip"
+        android:orientation="horizontal" >
 
         <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:src="@drawable/logo_green"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_green" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:paddingTop="3dp"
+            android:src="@drawable/magbig" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="15dp"
+        android:background="#12a976"
+        android:orientation="horizontal" >
 
-    <ListView
+        <ImageView
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/mic" />
+
+        <TextView
+            android:id="@+id/broadcast_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#12a976"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="5dp"
+            android:text="Broadcast a Message"
+            android:textColor="#fff"
+            android:textSize="17dip" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:paddingRight="7dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:text="My Homedeck"
+                android:textColor="#707070"
+                android:textSize="18dip" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <ListView
             android:id="@+id/listView1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:dividerHeight="10dip"
             android:divider="@android:color/transparent"
-            android:overScrollMode="never"/>
+            android:dividerHeight="10dip"
+            android:overScrollMode="never" />
 
-    <ProgressBar
+        <ProgressBar
             android:id="@android:id/empty"
-            android:layout_gravity="center"
             android:layout_width="80dp"
-            android:layout_height="80dp"/>
-
-</LinearLayout>
+            android:layout_height="80dp"
+            android:layout_gravity="center" />
+    </LinearLayout>
