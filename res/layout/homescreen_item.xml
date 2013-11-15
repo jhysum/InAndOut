@@ -13,7 +13,7 @@
         android:layout_height="@dimen/thumbnail_diameter"
         android:layout_centerVertical="true"
         android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toRightOf="@+id/indicator"
         android:src="@drawable/alec" />
 
     <LinearLayout
